@@ -38,19 +38,4 @@ A beautiful, production-ready calendar application built with **React**, **TypeS
 git clone https://github.com/venkatanaresh4285/calender.git
 cd calender
 
-### 2. Install Dependencies
-bash
-Copy
-Edit
-npm install
-### 3. Run the App Locally
-bash
-Copy
-Edit
-npm run dev
-App will be available at http://localhost:5173
-
-📦 Build for Production
-npm run build
-npm run preview
 
