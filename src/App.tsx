@@ -10,26 +10,26 @@ function App() {
     setActiveSection(section);
   };
 
- 
   return (
-  <div className="flex flex-col md:flex-row h-screen bg-gray-50">
-    {/* Sidebar on top in mobile, side in desktop */}
-    <Sidebar 
-      activeSection={activeSection} 
-      onSectionChange={handleSectionChange} 
-    />
-    
-    {/* Content section takes remaining space */}
-    <div className="flex-1 overflow-y-auto">
-      {activeSection === 'calendar' ? (
-        <Calendar />
-      ) : (
-        <SectionContent activeSection={activeSection} />
-      )}
-    </div>
-  </div>
-);
+    <div className="flex flex-col md:flex-row min-h-screen bg-gray-50">
+      {/* Sidebar: full width on mobile, 1/4 width on md+ */}
+      <div className="w-full md:w-1/4 border-r border-gray-200">
+        <Sidebar 
+          activeSection={activeSection} 
+          onSectionChange={handleSectionChange} 
+        />
+      </div>
 
+      {/* Main content: responsive */}
+      <div className="w-full md:flex-1 overflow-y-auto">
+        {activeSection === 'calendar' ? (
+          <Calendar />
+        ) : (
+          <SectionContent activeSection={activeSection} />
+        )}
+      </div>
+    </div>
+  );
 }
 
 export default App;
